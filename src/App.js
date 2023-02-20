@@ -1,23 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import Api from './components/Api';
+import Boxes from './components/Boxes';
+import Form from './components/Form';
+import Header from './components/Header';
+import Meme from './components/Meme';
+import Signup from './components/Signup';
+import WindowTracker from './components/WindowTracker';
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="max-w-7xl mx-auto px-5">
+      <Header />
+      <Meme />
+      {/* <Boxes /> */}
+      {/* <Form /> */}
+      {/* <Signup /> */}
+      {/* <Api /> */}
+      <WindowTracker />
     </div>
   );
 }
