@@ -1,15 +1,8 @@
-// import memes from "../shareable/memesData";
 import { useState, useEffect } from "react";
-import Count from "./Count";
+
 
 
 const Meme = () => {
-    // const [count, setCount] = useState(0);
-    // const [isGoingOut, setIsGoingOut] = useState(false);
-    // const [person, setPerson] = useState({
-    //     name: 'alain',
-    //     isStudent: false
-    // });
     const [meme, setMeme] = useState({
         topText: "",
         bottomText: "",
@@ -66,7 +59,7 @@ const Meme = () => {
                     name="topText"
                     value={meme.topText}
                     onChange={handleChange}
-                    className="px-2 py-2 bg-gray-400 w-1/3 mr-4"
+                    className="w-1/3 px-2 py-2 mr-4 bg-gray-400"
                 />
                 <input 
                     type="text" 
@@ -74,26 +67,16 @@ const Meme = () => {
                     name="bottomText"
                     value={meme.bottomText}
                     onChange={handleChange}
-                    className="px-2 py-2 bg-gray-400 w-1/3"
+                    className="w-1/3 px-2 py-2 bg-gray-400"
                 />
                 <hr />
-                <button onClick={handleClick} className="px-4 py-2 bg-indigo-700 text-white font-bold">Get a new meme image</button>
+                <button onClick={handleClick} className="px-4 py-2 font-bold text-white bg-indigo-700">Get a new meme image</button>
             </div>
             {meme && <div className="relative">
                 <img src={meme.url} alt="Meme image" className="w-full h-full"  />
-                <h2 className="absolute top-5 left-1/4 text-white text-xl uppercase font-bold">{meme.topText}</h2>
-                <h2 className="absolute bottom-5 left-1/4 text-white text-xl uppercase font-bold">{meme.bottomText}</h2>
+                <h2 className="absolute text-xl font-bold text-white uppercase top-5 left-1/4">{meme.topText}</h2>
+                <h2 className="absolute text-xl font-bold text-white uppercase bottom-5 left-1/4">{meme.bottomText}</h2>
             </div>}
-            <hr />
-            {/* <Count count={count} />
-            <button onClick={add}>+</button>
-            <button onClick={remove}>-</button>
-            <p>{isGoingOut ? 'Hello World' : 'Not Going Out'}</p>
-            <button onClick={() => setIsGoingOut(!isGoingOut)}>Toggle Is Going Out</button>
-            <br />
-            <h2>Person Object in State</h2>
-            <p>{person.name}. Is He a student? {person.isStudent ? 'Yes' : 'No'}</p>
-            <button onClick={handleToggleStudent}>Toggle Student</button> */}
         </main>
     );
 }
